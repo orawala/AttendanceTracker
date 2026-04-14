@@ -1,0 +1,218 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: system-ui;
+}
+
+body {
+  background: #000;
+  color: #e5e5e5;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  padding: 16px;
+  background: #000;
+  border-bottom: 1px solid #111;
+}
+
+main {
+  padding: 16px;
+  padding-bottom: 90px;
+}
+
+.screen {
+  display: none;
+}
+
+.screen.active {
+  display: block;
+}
+
+.card {
+  background: #0a0a0a;
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 14px;
+  border: 1px solid #151515;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+button {
+  background: #111;
+  color: #ccc;
+  border: 1px solid #222;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 6px;
+}
+
+.btn.active {
+  background: #333;
+  color: #fff;
+}
+
+.submit-btn {
+  display: block;
+  margin: 20px auto;
+  width: 60%;
+}
+
+.navbar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background: #050505;
+  border-top: 1px solid #111;
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+}
+
+.navbar button {
+  background: none;
+  border: none;
+  color: #777;
+}
+
+.navbar button.active {
+  color: #fff;
+}
+
+.calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.day {
+  padding: 8px 0;
+  text-align: center;
+  border: 1px solid #222;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.day.header {
+  border: none;
+  color: #888;
+  cursor: default;
+}
+
+.day:hover {
+  background: #111;
+}
+
+@media (max-width: 480px) {
+  .calendar {
+    gap: 3px;
+  }
+
+  .day {
+    padding: 6px 0;
+    font-size: 11px;
+  }
+}
+
+html {
+  overflow-y: scroll;
+}
+
+#new-subject {
+  width: 80%;
+  text-align: center;
+}
+
+.subject-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Inputs & Select (merged duplicate styles) */
+input, select {
+  background: #050505;
+  color: #ddd;
+  border: 1px solid #222;
+  border-radius: 8px;
+  padding: 8px;
+}
+
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  padding-right: 30px;
+
+  background-image:
+    linear-gradient(45deg, transparent 50%, #888 50%),
+    linear-gradient(135deg, #888 50%, transparent 50%);
+  background-position:
+    calc(100% - 15px) calc(50% - 3px),
+    calc(100% - 10px) calc(50% - 3px);
+  background-size: 5px 5px;
+  background-repeat: no-repeat;
+}
+
+input[type="file"] {
+  color: #aaa;
+}
+
+input[type="file"]::file-selector-button {
+  background: #111;
+  color: #ccc;
+  border: 1px solid #222;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background: #1a1a1a;
+}
+
+#markDateTitle {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.settings-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.settings-row button {
+  flex: 1;
+  margin: 0 5px;
+}
+
+.settings-row button:first-child {
+  margin-left: 0;
+}
+
+.settings-row button:last-child {
+  margin-right: 0;
+}
+
+.file-row {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}

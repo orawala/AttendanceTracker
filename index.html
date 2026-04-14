@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AttendanceTracker</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="shortcut icon" href="favicon.png" type="image/x-icon">
+  </head>
+
+  <body>
+
+    <header class="header">
+      <h2>AttendanceTracker</h2>
+      <p id="date"></p>
+    </header>
+
+    <main>
+
+      <section id="dashboard" class="screen active">
+        <div id="dashboard-data"></div>
+      </section>
+
+      <section id="mark" class="screen">
+        <h3 id="markDateTitle"></h3>
+        <div id="subjects-container"></div>
+        <button class="submit-btn" onclick="submitAttendance()">Submit</button>
+      </section>
+
+      <section id="subjects" class="screen">
+        <div class="card subject-form">
+          <input id="new-subject" placeholder="Subject name">
+          <button onclick="addSubject()">Add</button>
+        </div>
+        <div id="subject-list"></div>
+      </section>
+
+      <section id="history" class="screen">
+        <div class="card">
+          <div class="row">
+            <button onclick="changeMonth(-1)">←</button>
+            <span id="monthLabel"></span>
+            <button onclick="changeMonth(1)">→</button>
+          </div>
+          <div class="calendar" id="calendar"></div>
+        </div>
+      </section>
+
+      <section id="settings" class="screen">
+        <div class="card">
+          <div class="settings-row">
+            <button onclick="exportData()">Export</button>
+            <button onclick="handleImport()">Import</button>
+            <button onclick="resetData()">Reset</button>
+          </div>
+
+          <div class="file-row">
+            <input type="file" id="importFile">
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <nav class="navbar">
+      <button onclick="showScreen('dashboard')" class="active">Dashboard</button>
+      <button onclick="showScreen('mark')">Mark</button>
+      <button onclick="showScreen('subjects')">Subjects</button>
+      <button onclick="showScreen('history')">History</button>
+      <button onclick="showScreen('settings')">Settings</button>
+    </nav>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>
